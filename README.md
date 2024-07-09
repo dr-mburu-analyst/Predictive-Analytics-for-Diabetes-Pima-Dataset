@@ -1,6 +1,6 @@
 # Python-Projects
 
-Collection of Python Scripts and Projects
+Welcome to my Python projects repository!
 
 ## Python Projects Repository
 
