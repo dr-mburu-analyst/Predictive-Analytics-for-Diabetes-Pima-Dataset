@@ -49,7 +49,8 @@ demonstrated superior performance in predicting diabetes status with an accuracy
 
 - Distribution of outcomes, pregnancies, glucose levels, BMI, and other features by diabetes status.
 - Heatmap showing correlations between features.
-- ![Count of Diabetic/Non-Diabetic Patients](images/Count_of_Diabetes_Outcome.png)
+ ![Count of Diabetic/Non-Diabetic Patients](images/Count of Diabetes Outcome.png)
+
   
 ### Conclusion
 
