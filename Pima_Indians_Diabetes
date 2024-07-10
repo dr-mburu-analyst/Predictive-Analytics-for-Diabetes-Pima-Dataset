@@ -1,0 +1,393 @@
+# Import Libraries 
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.ensemble import RandomForestClassifier
+
+# PROJECT PURPOSE IS TO PREDICT WHO HAS DIABETES
+
+# Load Dataset
+# Print the first 5 rows of the dataframe
+
+diabetes_data= pd.read_csv('pima-indians-diabetes.csv')
+print(diabetes_data.head())
+
+# Data Cleaning 
+# Check and handle missing values and duplicates
+
+print(diabetes_data.isnull().any())
+print(diabetes_data.isna().any())
+print(diabetes_data.duplicated().any())
+
+# Data Exploration
+# Perform data exploration and visualization to find patterns and trends
+
+print(diabetes_data.info())
+print(diabetes_data.describe())
+print(diabetes_data.shape)
+
+# There are no missing values in the dataset, but there are columns with zero values, Pregnancies, Glucose,Blood_pressure, Insulin, BMI, and Diabetes Pedigree
+
+# 1. Visualization to show the distribution of the "Outcome" ie whether  a patient has diabetes(1) or not(0)
+
+plt.figure(figsize=(8, 6))
+ax = sns.countplot(data=diabetes_data, x="Outcome", alpha=0.5, palette=['#138D75', 'firebrick'])
+for container in ax.containers:
+    ax.bar_label(container, fontsize=10, label_type='edge')
+ax.set_xlabel('Outcome')
+ax.set_ylabel('Count')
+ax.set_title('Count of Diabetes Outcomes')
+ax.set_xticklabels(['Non-Diabetic', 'Diabetic'])
+plt.show()
+
+
+# 2. Visualization to show the Distribution of Pregnancies by Diabetes Outcome
+# Individuals with fewer pregnancies tend to show the outcome "0" (indicating no diabetes).
+# Conversely, those with a higher number of pregnancies tend to exhibit the outcome "1" (indicating diabetes)
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Outcome', y='Pregnancies', data=diabetes_data)
+plt.xlabel('Diabetes Outcome')
+plt.ylabel('Number of Pregnancies')
+plt.title('Distribution of Pregnancies by Diabetes Outcome')
+plt.show()
+
+
+# 3.Visualization to show the Distribution of Plasma Glucose Concentration  by Diabetes Outcome
+# Patients whose glucose count is low  tend to show the outcome "0"(indicating no diabetes)
+# Patients whose glucose count is high tend to show the outcome "1"(indicating  diabetes)
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Outcome', y='Glucose', data=diabetes_data)
+plt.xlabel('Diabetes Outcome')
+plt.ylabel('Plasma Glucose Concentration')
+plt.title('Distribution of Plasma Glucose Concentration by Diabetes Outcome')
+plt.show()
+
+
+# 4.Visualization to show the Distribution of Age  by Diabetes Outcome
+# Patients who do not have diabetes (outcome "0") tend to be younger on average(mean age of 27)
+# Patients who have diabetes (outcome "1") are generally older average(mean age of 36)
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Outcome', y='Age', data=diabetes_data)
+plt.xlabel('Diabetes Outcome')
+plt.ylabel('Age')
+plt.title('Distribution of Age by Diabetes Outcome')
+plt.show()
+
+
+# 4.Visualization to show the Distribution of BMI  by Diabetes Outcome
+# Patients who do not have diabetes (outcome "0") tend to have a smaller BMI, on average(mean BMI of 30)
+# Patients who have diabetes (outcome "1") generally have a higher BMI, on average(mean BMI of 34)
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Outcome', y='BMI', data=diabetes_data)
+plt.xlabel('Diabetes Outcome')
+plt.ylabel('BMI')
+plt.title('Distribution of  BMI by Diabetes Outcome')
+plt.show()
+
+
+# 5.Visualization to show the Distribution of Tricep Thickness by Diabetes Outcome
+# Patients who do not have diabetes (outcome "0") tend to have a smaller Tricep_thickness, on average(mean Tricep_thickness of 21)
+# Patients who have diabetes (outcome "1") generally have a bigger Tricep_thickness, on average(mean Tricep_thickness of 27.6)
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Outcome', y='Tricep_thickness', data=diabetes_data)
+plt.xlabel('Diabetes Outcome')
+plt.ylabel('Tricep_thickness')
+plt.title('Distribution of Tricep_thickness by Diabetes Outcome')
+plt.show()
+
+
+# 5.Visualization to show the Distribution of Diabetes_pedigree by Diabetes Outcome
+# Patients who do not have diabetes (outcome "0") tend to have a smaller Diabetes_pedigree , on average(mean Diabetes_pedigree of 0.346)
+# Patients who have diabetes (outcome "1") generally have a bigger Diabetes_pedigree, on average(mean Diabetes_pedigree of 0.452)
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Outcome', y='Diabetes_pedigree', data=diabetes_data)
+plt.xlabel('Diabetes Outcome')
+plt.ylabel('Diabetes_pedigree')
+plt.title('Distribution of Diabetes_pedigree by Diabetes Outcome')
+plt.show()
+
+
+# 5.Visualization to show the Distribution of Insulin by Diabetes Outcome
+# Patients who do not have diabetes (outcome "0") tend to have higher levels of insulin , on average(mean Insulin of 35)
+# Patients who have diabetes (outcome "1") generally have lower levels of insulin, on average(mean Insulin of 0)
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Outcome', y='Insulin', data=diabetes_data)
+plt.xlabel('Diabetes Outcome')
+plt.ylabel('Insulin')
+plt.title('Distribution of Insulin by Diabetes Outcome')
+plt.show()
+
+
+# Correlation heatmap
+# Create a heatmap to visually represent the correlation between variables.
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(diabetes_data.corr(), annot=True, cmap='coolwarm')
+plt.title('Correlation Heatmap')
+plt.show()
+
+
+# High positive correlations are typically represented by warmer colors (like red or orange).
+# High negative correlations are represented by cooler colors (like blue).
+# Little to no correlation is often shown in neutral colors (like white or light gray).
+
+
+# Now we have obtained some preliminary insights about how each important variable would affect the success rate, we can now select
+# the features that will be used in success prediction in the future  model. 
+# features= diabetes_data[['BMI','Glucose','Pregnancies','Tricep_thickness','Age']]
+
+# Model Creation and Evaluation
+# Create and evaluate models
+
+
+# Selecting relevant features and target variable
+X = diabetes_data.drop('Outcome', axis=1)
+y = diabetes_data['Outcome']
+
+# set up the training model
+#Data Splitting: Split the dataset into training (X_train, y_train) and testing (X_test, y_test) sets using train_test_split.
+# The 80% of the data is used for training, and 20% is used for testing
+#random state 0 ensures the data split is the same every time you run the code
+
+X_train, X_test, y_train, y_test = train_test_split(
+diabetes_data[['BMI','Glucose','Pregnancies','Tricep_thickness','Age']],
+diabetes_data[['Outcome']],
+test_size = 0.20,
+random_state=0
+)
+
+#Normalization: Scaling the  numeric features t a standard range, 0 and 1
+# normalize the data
+# Selecting relevant features and target variable
+
+X = diabetes_data[['BMI', 'Glucose', 'Pregnancies', 'Tricep_thickness', 'Age']]
+y = diabetes_data['Outcome']
+
+# Normalize the data
+# Normalize thd data to ensure all features contribute equally
+# to ensure consistency in the dataset
+
+from sklearn import preprocessing
+# preprocessing.normalize(X_train) normalizes the training data (X_train)
+X_train_norm = preprocessing.normalize(X_train)
+# preprocessing.normalize(X_test) normalizes the training data (X_test)
+X_test_norm = preprocessing.normalize(X_test)
+
+# Normalize the features of the dataset using 'StandardScaler' from 'sklearn.preprocessing' module
+#  by removing the mean and scaling to unit variance
+
+scaler = StandardScaler()
+# fit the scaler on the training data and transform it
+X_train_norm = scaler.fit_transform(X_train)
+X_test_norm = scaler.transform(X_test)
+
+# Model Training and Evaluation
+# Trained and evaluated multiple models:
+# 1. Decision Tree with hyperparameter tuning using GridSearchCV.
+# 2. Logistic Regression.
+# 3. Support Vector Machine (SVM).
+# 4. Random Forest.
+# 5. K-Nearest Neighbors (KNN).
+
+# I want to compare different algorithms and determine which one performs best based on the given dataset.
+
+# Used confusion matrices and classification reports to evaluate model performance.
+# Visualized confusion matrices for all models.
+
+# TESTING WITH DECISION TREE
+# Import the necessary libraries
+
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import GridSearchCV
+
+# Define the parameter Grid for hyperparameter tuning
+# Set Up GridSearchCV for Hyperparameter Tuning
+# Fit the model with Trining Data
+
+dt_params = {'max_depth': [None, 10, 20, 30], 'min_samples_split': [2, 5, 10]}
+dt_grid = GridSearchCV(DecisionTreeClassifier(random_state=42), dt_params, cv=5, n_jobs=-1, verbose=1)
+dt_grid.fit(X_train_norm, y_train)
+
+# Extract the best model
+best_dt = dt_grid.best_estimator_
+# Make predictions with the Best Model
+y_pred = best_dt.predict(X_test_norm)
+
+# Evaluate the Model
+
+#  Print classification report and confusion matrix
+print(classification_report(y_test, y_pred))
+
+#Confusion Matrix
+# A confusion matrix shows the number of correct and incorrect predictions
+print(confusion_matrix(y_test, y_pred))
+
+conf_matrix = confusion_matrix(y_test, y_pred)
+# Visualize the confusion matrix
+print(conf_matrix)
+plt.figure(figsize=(10, 7))
+sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', cbar=False,
+            xticklabels=['Non-Diabetic', 'Diabetic'], yticklabels=['Non-Diabetic', 'Diabetic'])
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix for Decision Tree')
+plt.show()
+
+
+# TESTING WITH LOGISTIC REGRESSION
+# Import the necessary libraries
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import classification_report, confusion_matrix
+
+# Define the parameter grid
+logreg_params = {'C': [0.1, 1, 10, 100], 'penalty': ['l1', 'l2'], 'solver': ['liblinear']}
+
+# Initialize and train the model
+logreg = LogisticRegression(random_state=0)
+logreg_grid = GridSearchCV(LogisticRegression(random_state=0), logreg_params, cv=5, n_jobs=-1, verbose=1)
+logreg_grid.fit(X_train_norm, y_train)
+
+# Make predictions
+best_logreg = logreg_grid.best_estimator_
+y_pred_logreg = best_logreg.predict(X_test_norm)
+
+# Evaluate the model
+print("Logistic Regression")
+print(classification_report(y_test, y_pred_logreg))
+print(confusion_matrix(y_test, y_pred_logreg))
+conf_matrix = confusion_matrix(y_test, y_pred_logreg)
+
+print(conf_matrix)
+# Visualize the confusion matrix
+# Plot the confusion matrix
+plt.figure(figsize=(10, 7))
+sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', cbar=False,
+            xticklabels=['Non-Diabetic', 'Diabetic'], yticklabels=['Non-Diabetic', 'Diabetic'])
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix for Logistic Regression')
+plt.show()
+
+
+# TESTING WITH SUPPORT VECTOR MACHINE (SVM)
+from sklearn.svm import SVC
+from sklearn.model_selection import GridSearchCV
+
+# Define the parameter grid
+svc_params = {'C': [0.1, 1, 10, 100], 'kernel': ['linear', 'rbf']}
+
+# Set up GridSearchCV
+svc_grid = GridSearchCV(SVC(random_state=0), svc_params, cv=5, n_jobs=-1, verbose=1)
+
+# Fit the model
+svc_grid.fit(X_train_norm, y_train)
+
+# Evaluate the best model
+best_svc = svc_grid.best_estimator_
+y_pred_svc = best_svc.predict(X_test_norm)
+
+print("Support Vector Machine (SVM)")
+print(classification_report(y_test, y_pred_svc))
+print(confusion_matrix(y_test, y_pred_svc))
+conf_matrix = confusion_matrix(y_test, y_pred_svc)
+
+print(conf_matrix)
+
+# Plot the confusion matrix
+plt.figure(figsize=(10, 7))
+sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', cbar=False,
+            xticklabels=['Non-Diabetic', 'Diabetic'], yticklabels=['Non-Diabetic', 'Diabetic'])
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix for SUPPORT VECTOR MACHINE (SVM)')
+plt.show()
+
+# TESTING WITH RANDOM FOREST
+from sklearn.model_selection import GridSearchCV
+
+# Define the parameter grid
+rf_params = {'n_estimators': [100, 200, 300], 'max_depth': [None, 10, 20, 30], 'min_samples_split': [2, 5, 10]}
+
+# Set up GridSearchCV
+rf_grid = GridSearchCV(RandomForestClassifier(random_state=0), rf_params, cv=5, n_jobs=-1, verbose=1)
+
+# Fit the model
+rf_grid.fit(X_train_norm, y_train)
+
+# # Make predictions
+# Evaluate the best model
+best_rf = rf_grid.best_estimator_
+y_pred_rf = best_rf.predict(X_test_norm)
+
+# Print classification report and confusion matrix
+
+print("Random Forest")
+print(classification_report(y_test, y_pred_rf))
+print(confusion_matrix(y_test, y_pred_rf))
+
+conf_matrix = confusion_matrix(y_test, y_pred_rf)
+
+print(conf_matrix)
+
+# Plot the confusion matrix
+
+plt.figure(figsize=(10, 7))
+sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', cbar=False,
+            xticklabels=['Non-Diabetic', 'Diabetic'], yticklabels=['Non-Diabetic', 'Diabetic'])
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix for RANDOM FOREST')
+plt.show()
+
+# TESTING WITH K-NEAREST NEIGHBORS (KNN)
+
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import GridSearchCV
+
+# Define the parameter grid
+knn_params = {'n_neighbors': [3, 5, 7, 9], 'weights': ['uniform', 'distance']}
+
+# Set up GridSearchCV
+knn_grid = GridSearchCV(KNeighborsClassifier(), knn_params, cv=5, n_jobs=-1, verbose=1)
+
+# Fit the model
+knn_grid.fit(X_train_norm, y_train)
+
+
+# Make predictions
+# Evaluate the best model
+best_knn = knn_grid.best_estimator_
+y_pred_knn = best_knn.predict(X_test_norm)
+
+# Print classification report and confusion matrix
+print("K-Nearest Neighbors (KNN)")
+print(classification_report(y_test, y_pred_knn))
+print(confusion_matrix(y_test, y_pred_knn))
+
+conf_matrix = confusion_matrix(y_test, y_pred_knn)
+
+print(conf_matrix)
+
+# Plot the confusion matrix
+plt.figure(figsize=(10, 7))
+sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', cbar=False,
+            xticklabels=['Non-Diabetic', 'Diabetic'], yticklabels=['Non-Diabetic', 'Diabetic'])
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix for K-Nearest Neighbors (KNN)')
+plt.show()
