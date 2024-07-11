@@ -90,13 +90,13 @@ Evaluated models using confusion matrices and classification reports.
   
 ### Logistic Regression
 
-- Steps involved in applying Logistic Regression model include:
+Steps involved in applying Logistic Regression model include:
   
-  -- **Data Preparation** {Preprocessed the dataset, including handling missing values, feature scaling, and splitting into training and testing sets}
-  -- **Model Configuration** {Imported the **LogisticRegression** from **sklearn.linear_model**}
-  -- **Model Training** {Trained the model on the training dataset through the use of **fit()** function}
-  -- **Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
-  -- **Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
+  - **Data Preparation** {Preprocessed the dataset, including handling missing values, feature scaling, and splitting into training and testing sets}
+  - **Model Configuration** {Imported the **LogisticRegression** from **sklearn.linear_model**}
+  - **Model Training** {Trained the model on the training dataset through the use of **fit()** function}
+  - **Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
+  - **Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
   
 ### Support Vector Machine (SVM)
 
