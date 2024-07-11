@@ -130,10 +130,14 @@ Steps involved in applying K-Nearest Neighbors model include:
 
 #### Results:
 
-- After thorough exploration and evaluation of various machine learning models on the Pima Indians dataset, both K-Nearest Neighbors (KNN) and 
-Logistic Regression demonstrated equal accuracy of 81%.
-- However, KNN had a higher F1 score for class 1 (70%), highlighting its effectiveness in identifying diabetic cases.
+- This project evaluated the effectiveness of each model by assessing metrics such as accuracy, precision,recall, and F1-score. The results are as shown below:
 
+                   Performance Metrics for Diabetes Prediction Models
+      ------------------------------------------------------------------------------------------------------------------------
+              **Model**         |**Accuracy**     | **Precision**    | **Recall**    |  **F1-Score**   
+      ------------------------------------------------------------------------------------------------------------------------
+
+  
 ### Visualizations
 
 - Distribution of outcomes, pregnancies, glucose levels, BMI, and other features by diabetes status.
