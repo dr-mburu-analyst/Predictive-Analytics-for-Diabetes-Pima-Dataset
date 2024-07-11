@@ -105,7 +105,7 @@ Steps involved in applying Logistic Regression model include:
   - **Data Preparation** {Preprocessed the dataset, including handling missing values, feature scaling, and splitting into training and testing sets}
   - **Model Configuration** {Imported the **SVC(Support Vector Classifier)** from **sklearn.svm**}
   - **Model Training** {Trained the model on the training dataset through the use of **fit()** function}
-   - **Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
+  - **Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
   - **Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
 
 ### Randon Forest
@@ -113,7 +113,7 @@ Steps involved in applying Logistic Regression model include:
  Steps involved in applying Random Forest model include:
   
   - **Data Preparation** {Preprocessed the dataset, including handling missing values, feature scaling, and splitting into training and testing sets}
-- **Model Configuration** {Imported the **Random Forest Classifier** from **sklearn.ensemble**; Defined the hyperparameters for the Random Forest model}
+  - **Model Configuration** {Imported the **Random Forest Classifier** from **sklearn.ensemble**; Defined the hyperparameters for the Random Forest model}
   - **Model Training** {Trained the model on the training dataset through the use of **fit()** function}
   - **Model Predition** { Employed the trained model for making predictions on the test set through the **predict()** function
   - **Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
@@ -123,9 +123,9 @@ Steps involved in applying Logistic Regression model include:
 Steps involved in applying K-Nearest Neighbors model include:
   
   - **Data Preparation** {Preprocessed the dataset, including handling missing values, feature scaling, and splitting into training and testing sets}
-- **Model Configuration** {Imported the **KNeighborsClassifier** from **sklearn.neighbors**}
+  - **Model Configuration** {Imported the **KNeighborsClassifier** from **sklearn.neighbors**}
   - **Model Training** {Trained the model on the training dataset through the use of **fit(**) function}
--  **Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
+  - **Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
   - **Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
 
 #### Results:
