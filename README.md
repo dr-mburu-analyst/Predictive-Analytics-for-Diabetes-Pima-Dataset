@@ -133,9 +133,9 @@ Steps involved in applying K-Nearest Neighbors model include:
 - This project evaluated the effectiveness of each model by assessing metrics such as accuracy, precision,recall, and F1-score. The results are as shown below:
 
                    Performance Metrics for Diabetes Prediction Models
-      ------------------------------------------------------------------------------------------------------------------------
+      |------------------------------------------------------------------------------------------------------------------------|
               **Model**         |**Accuracy**     | **Precision**    | **Recall**    |  **F1-Score**   
-      ------------------------------------------------------------------------------------------------------------------------
+      |------------------------------------------------------------------------------------------------------------------------|
 
   
 ### Visualizations
