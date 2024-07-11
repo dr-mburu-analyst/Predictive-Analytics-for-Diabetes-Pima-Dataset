@@ -19,6 +19,16 @@ The dataset (pima-indians-diabetes.csv) contains the following features:
   
 ### Project Steps
 
+#### Import Libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import classification_report, confusion_matrix
+
 #### Data Cleaning:
 
 - Checked for missing values and duplicates.
