@@ -79,13 +79,13 @@ Evaluated models using confusion matrices and classification reports.
 
 ### Decision Tree
 
-- Steps involved in applying Decision Tree model include:
+ Steps involved in applying Decision Tree model include:
   
-  --**Data Preparation** {Preprocessed the dataset, including handling missing values, feature scaling, and splitting into training and testing sets}
-  -- **Model Configuration** {Imported the **DecisionTreeClassifier** from **sklearn.tree**; Defined the hyperparameters for the Decision Tree model}
-  -- **Model Training** {Trained the model on the training dataset through the use of **fit()** function}
-  -- **Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
-  -- **Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
+  -**Data Preparation** {Preprocessed the dataset, including handling missing values, feature scaling, and splitting into training and testing sets}
+  -**Model Configuration** {Imported the **DecisionTreeClassifier** from **sklearn.tree**; Defined the hyperparameters for the Decision Tree model}
+  -**Model Training** {Trained the model on the training dataset through the use of **fit()** function}
+  -**Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
+  -**Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
 
   
 ### Logistic Regression
