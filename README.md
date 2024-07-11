@@ -132,12 +132,29 @@ Steps involved in applying K-Nearest Neighbors model include:
 
 - This project evaluated the effectiveness of each model by assessing metrics such as accuracy, precision,recall, and F1-score. The results are as shown below:
 
-                   Performance Metrics for Diabetes Prediction Models
-      |------------------------------------------------------------------------------------------------------------------------|
-              **Model**         |**Accuracy**     | **Precision**    | **Recall**    |  **F1-Score**   
+                   |Performance Metrics for Diabetes Prediction Models|
+      |------------------------------------------------------------------------------------------------------------------------|    
+      |**Model**         |**Accuracy**     | **Precision**    | **Recall**    |  **F1-Score** | 
       |------------------------------------------------------------------------------------------------------------------------|
 
-  
+                                                   | Feature               | Description                                                          |
+|-----------------------|----------------------------------------------------------------------|
+| Pregnancies           | Number of times pregnant                                             |
+| Glucose               | Plasma glucose concentration a 2 hours in an oral glucose tolerance test |
+| Blood Pressure        | Diastolic blood pressure (mm Hg)                                      |
+| Skin Thickness        | Triceps skin fold thickness (mm)                                      |
+| Insulin               | 2-Hour serum insulin (mu U/ml)                                        |
+| BMI                   | Body mass index (weight in kg/(height in m)^2)                        |
+| Diabetes Pedigree     | Diabetes pedigree function                                           |
+| Age                   | Age (years)                                                          |
+| Outcome               | Target variable (0 - non-diabetic, 1 - diabetic)                      |
+
+
+          
+
+      
+
+           
 ### Visualizations
 
 - Distribution of outcomes, pregnancies, glucose levels, BMI, and other features by diabetes status.
