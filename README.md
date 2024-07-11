@@ -29,6 +29,12 @@ The dataset (pima-indians-diabetes.csv) contains the following features:
 - from sklearn.pipeline import Pipeline
 - from sklearn.metrics import classification_report, confusion_matrix
 
+#### Load Dataset
+- diabetes_data = pd.read_csv('pima-indians-diabetes.csv')
+- print(diabetes_data.head())
+  
+#### Preprocess Data
+
 #### Data Cleaning:
 
 - Checked for missing values and duplicates.
@@ -42,8 +48,14 @@ The dataset (pima-indians-diabetes.csv) contains the following features:
 #### Feature Selection:
 
 - Selected features based on their impact on the diabetes prediction.
+
+###### Split the dataset
+- Split the data into training and testing sets.
   
-#### Model Creation and Evaluation:
+##### Normalize the data
+- Normalize the features to ensure consistency.
+  
+#### Train and Evaluate Models:
 
 Trained several machine learning models including Decision Tree, Logistic Regression, SVM, Random Forest, and K-Nearest Neighbors.
 Used GridSearchCV for hyperparameter tuning.
@@ -51,9 +63,9 @@ Evaluated models using confusion matrices and classification reports.
 
 #### Results:
 
-- After thorough exploration and evaluation of various machine learning models on the Pima Indians dataset, the K-Nearest Neighbors (KNN) 
-demonstrated superior performance in predicting diabetes status with an accuracy of 82%.
-- KNN's confusion matrix indicated the highest F1 score for class 1 (70%), highlighting its effectiveness in identifying diabetic cases.
+- After thorough exploration and evaluation of various machine learning models on the Pima Indians dataset, both K-Nearest Neighbors (KNN) and 
+Logistic Regression demonstrated equal accuracy of 81%.
+- However, KNN had a higher F1 score for class 1 (70%), highlighting its effectiveness in identifying diabetic cases.
 
 ### Visualizations
 
