@@ -128,9 +128,9 @@ Steps involved in applying K-Nearest Neighbors model include:
   - **Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
   - **Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
 
-#### Results:
+#### Results: Performance Metrics for Diabetes Prediction Models
 
-- This project evaluated the effectiveness of each model by assessing metrics such as accuracy, precision,recall, and F1-score. The results are as shown below: **Performance Metrics for Diabetes Prediction Models**   
+ This project evaluated the effectiveness of each model by assessing metrics such as accuracy, precision,recall, and F1-score. The results are as shown below:  
 
                                                                     
          
@@ -143,24 +143,12 @@ Steps involved in applying K-Nearest Neighbors model include:
       | K-Nearest Neighbors             | 0.82                    | 0.74                        | 0.66                | 0.70     |
               
 
-
-          
-
-      
-
-           
-### Visualizations
-
-- Distribution of outcomes, pregnancies, glucose levels, BMI, and other features by diabetes status.
-- Heatmap showing correlations between features.
-
-  ![Count of Diabetic/Non-Diabetic Patients](images/Count_of_Diabetes_Outcome.png)
-
   
 ### Conclusion
 
-- This project demonstrates how machine learning can predict diabetes based on health metrics among the Pima Indians. 
-- The insights gained can potentially aid in early diagnosis and intervention.
-- Features such as glucose levels, BMI, age, and insulin levels strongly correlate with diabetes status.
-- Non-diabetic patients tend to be younger, with lower BMI, and smaller triceps thickness, while diabetic individuals are generally older and have higher BMI and triceps thickness.
-- Machine learning models trained on this dataset can effectively predict diabetes status, with features like BMI and glucose playing crucial roles in classification.
+- An investigation of the five models demonstrated that K-Nearest Neighbors achieved superior performance for diabetes detection on the Pima Indian Diabetes dataset, with the higherst accuracy of 82%
+  along with precision, recall, and F1-score.
+
+
+
+
