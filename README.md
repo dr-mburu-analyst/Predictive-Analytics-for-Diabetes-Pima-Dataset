@@ -133,12 +133,14 @@ Steps involved in applying K-Nearest Neighbors model include:
 - This project evaluated the effectiveness of each model by assessing metrics such as accuracy, precision,recall, and F1-score. The results are as shown below:
 
       **Performance Metrics for Diabetes Prediction Models**                                                                  
-      |------------------------------------------------------------------------------------------------------------------------|    
-      |**Model**             |**Accuracy**             |**Precision**                 |**Recall**          |**F1-Score**|       |
-      | Decision Tree          | 0.78                    |0.63                         |0.66                 |  0.65            |
-      |------------------------------------------------------------------------------------------------------------------------ |
-
-
+         
+      |**Model**                        |**Accuracy**             |**Precision**                 |**Recall**          |**F1-Score**|       
+      |--------------------------------------------------------------------------------------------------------------------------|
+      | Decision Tree                   | 0.78                    |0.63                         |0.66                 | 0.65     |
+      | Logistic Regression             | 0.81                    | 0.73                        | 0.57                | 0.64     |
+      | Support Vector Machine (SVM)    | 0.80                    | 0.71                        | 0.57                | 0.64     |
+      | Randon Forest                   | 0.79                    | 0.67                        | 0.64                | 0.65     |
+      | K-Nearest Neighbors             | 0.82                    | 0.74                        | 0.66                | 0.70     |
               
 
 
