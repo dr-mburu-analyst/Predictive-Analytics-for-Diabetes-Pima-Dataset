@@ -101,7 +101,15 @@ These steps included handling missing values, feature scalinf, and splitting the
 - Patients who have diabetes(outcome “1”) generally have a larger Triceps thickness on average (mean of 27.6).
 
 
-![Pima_Indians_Diabetes](images/Distribution%20of%20Age%20by%20Diabetes%20Outcom.png)
+![Pima_Indians_Diabetes](images/Distribution%20of%20Tricep_thickness%20by%20Diabetes%20Outcome.png)
+
+**Diabetes Pedigree vs. Diabetes Outcome**
+- Patients who do not have diabetes (outcome “0”) tend to have a smaller Diabetes Pedigree on average (mean Diabetes Pedigree = 0.346).
+- Patients who have diabetes (outcome “1”) generally have a larger Diabetes Pedigree on average (mean Diabetes Pedigree = 0.452).
+
+
+![Pima_Indians_Diabetes](images/Distribution%20of%20Tricep_thickness%20by%20Diabetes%20Outcome.png)
+
 
 #### Feature Selection:
 
