@@ -122,7 +122,7 @@ These steps included handling missing values, feature scalinf, and splitting the
   detecting patterns, ensuring data quality, and facilitating communication of findings in my analysis of the diabetes predictors among the Pima Indians.
 
   
-![Pima_Indians_Diabetes](images/Distribution%20of%20Insulin%20by%20Diabetes%20Outcome.png)
+![Pima_Indians_Diabetes](images/Correlation%20HeatMap.png)
 
 
 #### Feature Selection:
@@ -152,6 +152,10 @@ Evaluated models using confusion matrices and classification reports.
   - **Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
   - **Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
 
+**Decision Tree Confusion Matrix**
+
+![Pima_Indians_Diabetes](images/Correlation%20HeatMap.png)
+
   
 ### Logistic Regression
 
@@ -162,6 +166,11 @@ Steps involved in applying Logistic Regression model include:
   - **Model Training** {Trained the model on the training dataset through the use of **fit()** function}
   - **Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
   - **Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
+
+**Logistic Regression Confusion Matrix**
+
+![Pima_Indians_Diabetes](images/Correlation%20HeatMap.png)
+
   
 ### Support Vector Machine (SVM)
 
@@ -173,6 +182,13 @@ Steps involved in applying Logistic Regression model include:
   - **Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
   - **Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
 
+    
+
+ **Support Vector Machine (SVM) Confusion Matrix**
+
+ ![Pima_Indians_Diabetes](images/Correlation%20HeatMap.png)
+ 
+
 ### Randon Forest
 
  Steps involved in applying Random Forest model include:
@@ -182,6 +198,12 @@ Steps involved in applying Logistic Regression model include:
   - **Model Training** {Trained the model on the training dataset through the use of **fit()** function}
   - **Model Predition** { Employed the trained model for making predictions on the test set through the **predict()** function
   - **Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
+
+  **Random Forest Confusion Matrix**
+
+  ![Pima_Indians_Diabetes](images/Correlation%20HeatMap.png)
+
+  
   
 ### K-Nearest Neighbors
 
@@ -192,6 +214,12 @@ Steps involved in applying K-Nearest Neighbors model include:
   - **Model Training** {Trained the model on the training dataset through the use of **fit(**) function}
   - **Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
   - **Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
+
+**K-Nearest Neighbors Confusion Matrix**
+
+![Pima_Indians_Diabetes](images/Correlation%20HeatMap.png)
+
+
 
 #### Results: Performance Metrics for Diabetes Prediction Models
 
