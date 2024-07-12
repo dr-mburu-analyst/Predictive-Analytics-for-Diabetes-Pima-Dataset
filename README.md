@@ -94,8 +94,14 @@ These steps included handling missing values, feature scalinf, and splitting the
 - Patients who have diabetes (outcome “1”) are generally older on average (mean age of 36).
 
 
-![Pima_Indians_Diabetes](images/Distribution%20of%20Plasma%20Glucose%20Concentration%20by%20Diabetes%20Outcome.png)
+![Pima_Indians_Diabetes](images/Distribution%20of%20Age%20by%20Diabetes%20Outcom.png)
 
+**Tricep-Thickness vs. Diabetes Outcome**
+- Patients who do not have diabetes(outcome “0”) tend to have a smaller Triceps thickness on average (mean of 21).
+- Patients who have diabetes(outcome “1”) generally have a larger Triceps thickness on average (mean of 27.6).
+
+
+![Pima_Indians_Diabetes](images/Distribution%20of%20Age%20by%20Diabetes%20Outcom.png)
 
 #### Feature Selection:
 
