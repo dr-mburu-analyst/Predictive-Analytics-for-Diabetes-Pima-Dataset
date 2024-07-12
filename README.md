@@ -115,7 +115,16 @@ These steps included handling missing values, feature scalinf, and splitting the
 - Patients with an outcome of "1" (diabetic) have a median insulin levels of 0.
 
 
-![Pima_Indians_Diabetes]()
+![Pima_Indians_Diabetes](images/Distribution%20of%20Insulin%20by%20Diabetes%20Outcome.png)
+
+**PIDD Correlation Heatmap**
+- The correlation heatmap below was crucial in showing how all features in the PIDD dataset correlate with each other. It helped in feature selection,
+  detecting patterns, ensuring data quality, and facilitating communication of findings in my analysis of the diabetes predictors among the Pima Indians.
+
+  
+![Pima_Indians_Diabetes](images/Distribution%20of%20Insulin%20by%20Diabetes%20Outcome.png)
+
+
 #### Feature Selection:
 
 - Selected features based on their impact on the diabetes prediction.
