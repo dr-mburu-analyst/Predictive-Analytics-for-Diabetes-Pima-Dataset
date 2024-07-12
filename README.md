@@ -217,7 +217,7 @@ Steps involved in applying K-Nearest Neighbors model include:
 
 **K-Nearest Neighbors Confusion Matrix**
 
-![Pima_Indians_Diabetes](images/Correlation%20HeatMap.png)
+![Pima_Indians_Diabetes](images/Confusion%20Matrix%20for%20K-Nearest%20Neighbors%20(KNN)'.png)
 
 
 
