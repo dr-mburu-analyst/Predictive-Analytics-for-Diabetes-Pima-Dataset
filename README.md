@@ -169,7 +169,7 @@ Steps involved in applying Logistic Regression model include:
 
 **Logistic Regression Confusion Matrix**
 
-![Pima_Indians_Diabetes](images/Correlation%20HeatMap.png)
+![Pima_Indians_Diabetes](images/Confusion%20Matrix%20for%20Logistic%20Regressio.png)
 
   
 ### Support Vector Machine (SVM)
