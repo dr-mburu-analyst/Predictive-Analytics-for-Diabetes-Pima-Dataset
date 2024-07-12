@@ -87,8 +87,16 @@ These steps included handling missing values, feature scalinf, and splitting the
 - Patients whose glucose count is high tend to show the outcome “1”(diabetic).
 
 
-![Pima_Indians_Diabetes](images/Distribution%20of%20Pregnancies%20by%20Diabetes%20Outcome.png)
-  
+![Pima_Indians_Diabetes](images/Distribution%20of%20Plasma%20Glucose%20Concentration%20by%20Diabetes%20Outcome.png)
+
+**Age vs. Diabetes Outcome**
+- Patients who do not have diabetes (outcome "0”) tend to be younger on average (mean age of 27).
+- Patients who have diabetes (outcome “1”) are generally older on average (mean age of 36).
+
+
+![Pima_Indians_Diabetes](images/Distribution%20of%20Plasma%20Glucose%20Concentration%20by%20Diabetes%20Outcome.png)
+
+
 #### Feature Selection:
 
 - Selected features based on their impact on the diabetes prediction.
