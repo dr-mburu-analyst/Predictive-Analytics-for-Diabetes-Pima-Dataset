@@ -62,7 +62,7 @@ These steps included handling missing values, feature scalinf, and splitting the
 
 #### Key Visualizations Created
 
-
+ ![Pima Indian Diabetes](images/AdventureWorks_Logo.png)
   
 #### Feature Selection:
 
