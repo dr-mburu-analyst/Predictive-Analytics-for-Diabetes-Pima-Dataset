@@ -108,9 +108,14 @@ These steps included handling missing values, feature scalinf, and splitting the
 - Patients who have diabetes (outcome “1”) generally have a larger Diabetes Pedigree on average (mean Diabetes Pedigree = 0.452).
 
 
-![Pima_Indians_Diabetes](images/Distribution%20of%20Tricep_thickness%20by%20Diabetes%20Outcome.png)
+![Pima_Indians_Diabetes](images/Distribution%20of%20Diabetes_pedigree%20by%20Diabetes%20Outcome.png)
+
+**Insulin vs. Diabetes Outcome**
+- Patients with an outcome of "0" (non-diabetic) have a median value of 5.
+- Patients with an outcome of "1" (diabetic) have a median insulin levels of 0.
 
 
+![Pima_Indians_Diabetes]()
 #### Feature Selection:
 
 - Selected features based on their impact on the diabetes prediction.
