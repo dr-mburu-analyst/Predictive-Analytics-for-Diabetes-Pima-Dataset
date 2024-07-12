@@ -186,7 +186,7 @@ Steps involved in applying Logistic Regression model include:
 
  **Support Vector Machine (SVM) Confusion Matrix**
 
- ![Pima_Indians_Diabetes](images/Correlation%20HeatMap.png)
+ ![Pima_Indians_Diabetes](images/Confusion%20Matrix%20for%20SUPPORT%20VECTOR%20MACHINE%20(SVM).png)
  
 
 ### Randon Forest
