@@ -154,7 +154,7 @@ Evaluated models using confusion matrices and classification reports.
 
 **Decision Tree Confusion Matrix**
 
-![Pima_Indians_Diabetes](images/Correlation%20HeatMap.png)
+![Pima_Indians_Diabetes](images/Confusion%20Matrix%20for%20Decision%20Tree.png)
 
   
 ### Logistic Regression
