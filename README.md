@@ -37,15 +37,13 @@ The dataset (pima-indians-diabetes.csv) contains the following features:
 - from sklearn.neighbors import KNeighborsClassifier
 - from sklearn.svm import SVC
 
-
 #### Load Dataset
 
 - Load the Pima_Indians_Diabetes dataset on VS Code
 - Verify the data by printing the first few rows of the dataset
 - Run the script
 - Check the output in the terminal to see the printed data.
-
-  
+ 
 #### Preprocess Data
 
 PIDD is a widely used dataset for diabetes prediction. In this project a series of preprocessing steps were implemented before training the models.
@@ -65,7 +63,6 @@ These steps included handling missing values, feature scalinf, and splitting the
 **Count of Diabetic/ Non-Diabetes Patients**
 - From the dataset, about 500 patients are non-diabetic, while about 268 are diabetic.
   
-
 ![Pima_Indians_Diabetes](images/Count%20of%20Diabetes%20Outcome.png)
 
 **BMI vs. Diabetes Outcome**
@@ -93,7 +90,6 @@ These steps included handling missing values, feature scalinf, and splitting the
 - Patients who do not have diabetes (outcome "0”) tend to be younger on average (mean age of 27).
 - Patients who have diabetes (outcome “1”) are generally older on average (mean age of 36).
 
-
 ![Pima_Indians_Diabetes](images/Distribution%20of%20Age%20by%20Diabetes%20Outcom.png)
 
 **Tricep-Thickness vs. Diabetes Outcome**
@@ -107,23 +103,19 @@ These steps included handling missing values, feature scalinf, and splitting the
 - Patients who do not have diabetes (outcome “0”) tend to have a smaller Diabetes Pedigree on average (mean Diabetes Pedigree = 0.346).
 - Patients who have diabetes (outcome “1”) generally have a larger Diabetes Pedigree on average (mean Diabetes Pedigree = 0.452).
 
-
 ![Pima_Indians_Diabetes](images/Distribution%20of%20Diabetes_pedigree%20by%20Diabetes%20Outcome.png)
 
 **Insulin vs. Diabetes Outcome**
 - Patients with an outcome of "0" (non-diabetic) have a median value of 5.
 - Patients with an outcome of "1" (diabetic) have a median insulin levels of 0.
 
-
 ![Pima_Indians_Diabetes](images/Distribution%20of%20Insulin%20by%20Diabetes%20Outcome.png)
 
 **PIDD Correlation Heatmap**
 - The correlation heatmap below was crucial in showing how all features in the PIDD dataset correlate with each other. It helped in feature selection,
   detecting patterns, ensuring data quality, and facilitating communication of findings in my analysis of the diabetes predictors among the Pima Indians.
-
   
 ![Pima_Indians_Diabetes](images/Correlation%20HeatMap.png)
-
 
 #### Feature Selection:
 
@@ -182,13 +174,10 @@ Steps involved in applying Logistic Regression model include:
   - **Model Predition** { Used the trained model for making predictions on the test set through the **predict()** function
   - **Model Evaluation** {Assessed the models effectiveness through evaluating metrics such as accuracy, precision, recall, and F1-score}
 
-    
-
  **Support Vector Machine (SVM) Confusion Matrix**
 
  ![Pima_Indians_Diabetes](images/Confusion%20Matrix%20for%20SUPPORT%20VECTOR%20MACHINE%20(SVM).png)
  
-
 ### Randon Forest
 
  Steps involved in applying Random Forest model include:
@@ -201,10 +190,8 @@ Steps involved in applying Logistic Regression model include:
 
   **Random Forest Confusion Matrix**
 
-  ![Pima_Indians_Diabetes](images/Correlation%20HeatMap.png)
-
-  
-  
+  ![Pima_Indians_Diabetes](images/Confusion%20Matrix%20for%20RANDOM%20FOREST.png)
+ 
 ### K-Nearest Neighbors
 
 Steps involved in applying K-Nearest Neighbors model include:
@@ -218,7 +205,6 @@ Steps involved in applying K-Nearest Neighbors model include:
 **K-Nearest Neighbors Confusion Matrix**
 
 ![Pima_Indians_Diabetes](images/Confusion%20Matrix%20for%20K-Nearest%20Neighbors%20(KNN)'.png)
-
 
 
 #### Results: Performance Metrics for Diabetes Prediction Models
