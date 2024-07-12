@@ -60,18 +60,22 @@ These steps included handling missing values, feature scalinf, and splitting the
 - Explored data distribution and statistics.
 - Visualized key features against the diabetes outcome.
 
-#### Key Visualizations Created
+### Key Visualizations Created
 
 **Count of Diabetic/ Non-Diabetes Patients**
 - From the dataset, about 500 patients are non-diabetic, while about 268 are diabetic.
 
-
-
-![Pima_Indians_Diabetes](images/Distribution%20of%20%20BMI%20by%20Diabetes%20Outcome.png)
+![Pima_Indians_Diabetes](images/Count%20of%20Diabetes%20Outcome.png)
 
 **BMI vs. Diabetes Outcome**
 - Patients who do not have diabetes (outcome “0”) tend to have a smaller BMI on average (mean BMI of 30).
 - Patients who have diabetes (outcome “1”) generally have a higher BMI on average (mean BMI of 34).
+
+![Pima_Indians_Diabetes](images/Distribution%20of%20%20BMI%20by%20Diabetes%20Outcome.png)
+
+**Pregnancies vs. Diabetes Outcome**
+- Patients with fewer pregnancies tend to show the outcome “0” (indicating no diabetes).
+- Conversely, patients with a higher number of pregnancies tend to exhibit the outcome “1”(indicating diabetes).
 
 ![Pima_Indians_Diabetes](images/Distribution%20of%20%20BMI%20by%20Diabetes%20Outcome.png)
   
