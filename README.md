@@ -1,5 +1,5 @@
 # Pima Indians Diabetes Prediction
-![Pima_Indians_Diabetes]()
+![Pima_Indians_Diabetes](images/Pima%20indian.png)
 
 ## Overview
 
